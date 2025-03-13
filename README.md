@@ -1,29 +1,80 @@
-# FacialEmotionDetection
+# Facial Emotion Detection
 
-steps: (I use mac desktop and vscode, python 3.13.1)
-1) download dataset.zip from https://www.kaggle.com/datasets/sujaykapadnis/emotion-recognition-dataset?select=dataset 
-2) set up venv in python. then in terminal run "pip install -r requirements.txt"
-3) run dataprep.py
-4) note that YOLOv8 wants each image to be in format [<class_id> <x_center> <y_center> <width> <height>] our data set has the images already focused on the single face so we assume fulle photo dimensions
-5) before running train.py to train model. adjust train.py like epoch and model for desired outcome. additionally use google collab for faster training
+This project aims to detect facial emotions using deep learning techniques. The following instructions will guide you through setting up and running the project on a macOS system with Python 3.13.1 and Visual Studio Code, as well as using Google Colab for faster training.
 
-Google collab setup: bit off since changes to above
-1. Sign in Google Collab and click "New Notebook", rename notebook to "EmotionFacialDetection.ipynb"
-2. Enable GPU. Click "Runtime" --> "Change runtime type" --> Select GPU as the hardware accelerator --> Click "Save"
-3. Create a new folder in your device Google Drive "FacialEmotionDetection"
-4. Upload "data.yaml" and "train.py" to Google Drive folder
-5. To upload photos since there are a thousands of photo use zip command in project terminal with "zip -r DataTrainingTesting.zip data/training data/testing"
-6. Upload "DataTrainingTesting.zip" to Google Drive folder
-7. In Google Collab notebook, on right side menu open folder icon, click folder with google drive icon and follow steps to allow
-8. In Google Collab notebook command line, type the following:
-"""
-!unzip /content/drive/MyDrive/EmotionFacialDetection/DataTrainingTesting.zip -d /content/
-!pip install ultralytics
-!cp /content/drive/MyDrive/EmotionFacialDetection/data.yaml /content/data.yaml
-!cp /content/drive/MyDrive/EmotionFacialDetection/train.py /content/train.py
-!python /content/train.py
-"""
+## Local Setup (macOS with VSCode)
 
-9) NOT DONE YETT
-10) 
-11) 
+1. **Download the Dataset**:
+   - Obtain the `dataset.zip` file from [Kaggle's Emotion Recognition Dataset](https://www.kaggle.com/datasets/sujaykapadnis/emotion-recognition-dataset?select=dataset).
+
+2. **Set Up Virtual Environment**:
+   - Open a terminal and navigate to your project directory.
+   - Create a virtual environment:
+     ```bash
+     python3 -m venv env
+     ```
+   - Activate the virtual environment:
+     ```bash
+     source env/bin/activate
+     ```
+
+3. **Install Dependencies**:
+   - Install the required packages:
+     ```bash
+     pip install -r requirements.txt
+     ```
+
+4. **Prepare the Data**:
+   - Run the data preparation script:
+     ```bash
+     python dataprep.py
+     ```
+   - **Note**: YOLOv8 expects each image annotation in the format `[<class_id> <x_center> <y_center> <width> <height>]`. Since our dataset images are already focused on a single face, we assume the annotations cover the full photo dimensions.
+
+5. **Train the Model**:
+   - Before training, adjust the `train.py` script as needed, such as setting the number of epochs and selecting the model architecture.
+   - For faster training, consider using Google Colab.
+
+## Google Colab Setup
+
+1. **Create a New Notebook**:
+   - Sign in to [Google Colab](https://colab.research.google.com/) and create a new notebook. Rename it to "EmotionFacialDetection.ipynb".
+
+2. **Enable GPU Acceleration**:
+   - Click on "Runtime" > "Change runtime type".
+   - Set "Hardware accelerator" to "GPU" and click "Save".
+
+3. **Organize Files in Google Drive**:
+   - Create a folder named "FacialEmotionDetection" in your Google Drive.
+   - Upload the following files to this folder:
+     - `data.yaml`
+     - `train.py`
+     - `dataset.zip` (downloaded from Kaggle)
+
+4. **Mount Google Drive in Colab**:
+   - In the Colab notebook, run:
+     ```python
+     from google.colab import drive
+     drive.mount('/content/drive')
+     ```
+
+5. **Set Up the Environment and Data**:
+   - Run the following commands in Colab:
+     ```bash
+     !unzip /content/drive/MyDrive/FacialEmotionDetection/dataset.zip -d /content/
+     !pip install ultralytics
+     !cp /content/drive/MyDrive/FacialEmotionDetection/data.yaml /content/data.yaml
+     !cp /content/drive/MyDrive/FacialEmotionDetection/train.py /content/train.py
+     ```
+
+6. **Train the Model**:
+   - Start the training process by running:
+     ```bash
+     !python /content/train.py
+     ```
+   - **Note**: Training may take a significant amount of time, potentially over an hour.
+
+7. **NOT DONE YET**:
+   
+
+**Note**: Ensure that the paths in the Colab commands match the actual locations of your files in Google Drive. Adjust the `train.py` script parameters as needed to achieve optimal training results.
