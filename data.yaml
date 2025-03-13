@@ -1,0 +1,5 @@
+train: ./data/training/images
+val: ./data/testing/images
+
+nc: 6  # Number of emotion classes
+names: ["Ahegao", "Angry", "Happy", "Neutral", "Sad", "Surprise"]  # Note must match the order in `dataprep.py`

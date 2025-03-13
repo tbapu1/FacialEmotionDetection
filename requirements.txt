@@ -1,0 +1,6 @@
+ultralytics==8.3.88
+opencv-python
+numpy
+pandas
+torch
+scikit-learn
