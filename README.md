@@ -5,7 +5,7 @@ This project aims to detect facial emotions using deep learning techniques. The 
 ## Local Setup (macOS with VSCode)
 
 1. **Download the Dataset**:
-   - Obtain the `dataset.zip` file from [Kaggle's Emotion Recognition Dataset](https://www.kaggle.com/datasets/sujaykapadnis/emotion-recognition-dataset?select=dataset).
+   - Obtain the `dataset.zip` file from [Kaggle's Emotion Recognition Dataset](https://www.kaggle.com/datasets/sujaykapadnis/emotion-recognition-dataset?select=dataset). Place zip file in data/photos folder.
 
 2. **Set Up Virtual Environment**:
    - Open a terminal and navigate to your project directory.
