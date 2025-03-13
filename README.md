@@ -38,7 +38,7 @@ This project aims to detect facial emotions using deep learning techniques. The 
 ## Google Colab Setup
 
 1. **Create a New Notebook**:
-   - Sign in to [Google Colab](https://colab.research.google.com/) and create a new notebook. Rename it to "EmotionFacialDetection.ipynb".
+   - Sign in to [Google Colab](https://colab.research.google.com/) and create a new notebook. Rename it to "FacialEmotionDetection.ipynb".
 
 2. **Enable GPU Acceleration**:
    - Click on "Runtime" > "Change runtime type".
