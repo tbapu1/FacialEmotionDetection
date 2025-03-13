@@ -7,7 +7,7 @@ steps: (I use mac desktop and vscode, python 3.13.1)
 4) note that YOLOv8 wants each image to be in format [<class_id> <x_center> <y_center> <width> <height>] our data set has the images already focused on the single face so we assume fulle photo dimensions
 5) before running train.py to train model. adjust train.py like epoch and model for desired outcome. additionally use google collab for faster training
 
-Google collab setup:
+Google collab setup: bit off since changes to above
 1. Sign in Google Collab and click "New Notebook", rename notebook to "EmotionFacialDetection.ipynb"
 2. Enable GPU. Click "Runtime" --> "Change runtime type" --> Select GPU as the hardware accelerator --> Click "Save"
 3. Create a new folder in your device Google Drive "FacialEmotionDetection"
